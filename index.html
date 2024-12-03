@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="fr" data-fr-scheme="system">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="dsfr.min.css">
+    <link rel="stylesheet" href="custom.css">
+
+    <meta name="theme-color" content="#000091"><!-- Défini la couleur de thème du navigateur (Safari/Android) -->
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png"><!-- 180×180 -->
+    <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon"><!-- 32×32 -->
+    <link rel="manifest" href="favicon/manifest.webmanifest" crossorigin="use-credentials">
+    <!-- Modifier les chemins relatifs des favicons en fonction de la structure du projet -->
+    <!-- Dans le fichier manifest.webmanifest aussi, modifier les chemins vers les images -->
+
+    <title>COSARI - Consommer Sans Risque</title>
+</head>
+
+<body>
+    <header role="banner" class="fr-header">
+        <div class="fr-header__body">
+            <div class="fr-container">
+                <div class="fr-header__body-row">
+                    <div class="fr-header__brand fr-enlarge-link">
+                        <div class="fr-header__brand-top">
+                            <div class="fr-header__logo">
+                                <a href="/" title="COSARI - Consommer sans risque">
+                                    <p class="fr-logo" aria-details="Consommer sans risque">
+                                        COSARI
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="fr-header__profil">
+                                <button class="fr-btn--profil fr-btn js-page-onclick" data-section="profil"
+                                    data-fr-opened="false" title="Profil">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--  SECTION PROFIL -->
+    <section class="js-page js-profil">
+        <section class="fr-accordion">
+            <h3 class="fr-accordion__title">
+                <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-foyer">Foyer</button>
+            </h3>
+            <div class="fr-collapse" id="accordion-foyer">
+                <div class="fr-select-group">
+                    <label class="fr-label" for="select-nombre-adultes">
+                        Adultes
+                    </label>
+                    <select class="fr-select" id="select-nombre-adultes" name="select">
+                        <option value="" selected disabled hidden>Nombre d'adultes</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="fr-select-group">
+                    <label class="fr-label" for="select-regimes-alimentaire">
+                        Régimes alimentaire
+                    </label>
+                    <select class="fr-select" id="select-regimes-alimentaire" name="select">
+                        <option value="" selected disabled hidden>Selectionner un régime alimentaire</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="fr-accordion">
+            <h3 class="fr-accordion__title">
+                <button class="fr-accordion__btn" aria-expanded="false"
+                    aria-controls="accordion-localisation">Localisation</button>
+            </h3>
+            <div class="fr-collapse" id="accordion-localisation">
+                <div class="fr-select-group">
+                    <label class="fr-label" for="select-communes">
+                        Communes
+                    </label>
+                    <select class="fr-select" id="select-communes" name="select">
+                        <option value="" selected disabled hidden>Selectionner une commune</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <fieldset class="fr-fieldset" id="radio-alentour"
+                    aria-labelledby="radio-hint-legend radio-hint-messages">
+                    <legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="radio-alentour-alentour-legend">
+                        Alentour
+                    </legend>
+                    <div class="fr-fieldset__element">
+                        <div class="fr-radio-group">
+                            <input type="radio" id="radio-alentour-5km" name="radio-alentour" value="5">
+                            <label class="fr-label" for="radio-alentour-5km">
+                                5 km
+                            </label>
+                        </div>
+                    </div>
+                    <div class="fr-fieldset__element">
+                        <div class="fr-radio-group">
+                            <input type="radio" id="radio-alentour-10km" name="radio-alentour" value="10">
+                            <label class="fr-label" for="radio-alentour-10km">
+                                10 km
+                            </label>
+                        </div>
+                    </div>
+                    <div class="fr-fieldset__element">
+                        <div class="fr-radio-group">
+                            <input type="radio" id="radio-alentour-20km" name="radio-alentour" value="20">
+                            <label class="fr-label" for="radio-alentour-20km">
+                                20 km
+                            </label>
+                        </div>
+                    </div>
+                    <div class="fr-messages-group" id="radio-alentour-messages" aria-live="assertive">
+                    </div>
+                </fieldset>
+            </div>
+        </section>
+
+        <section class="fr-accordion">
+            <h3 class="fr-accordion__title">
+                <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-compte-distr">Compte distributeur</button>
+            </h3>
+            <div class="fr-collapse" id="accordion-compte-distr">
+                <button class="fr-btn" title="Rechercher">
+                    Ajouter un compte
+                </button>
+            </div>
+        </section>
+    </section>
+
+    <!-- ALERTES -->
+    <section class="js-page js-alertes">
+        <div class="fr-search-bar" id="header-search" role="search">
+            <label class="fr-label" for="search-784-input">
+                Recherche
+            </label>
+            <input class="fr-input" placeholder="Rechercher" type="search" id="search-784-input"
+                name="search-784-input">
+            <button class="fr-btn" title="Rechercher">
+                Rechercher
+            </button>
+        </div>
+
+        <div class="alerts_list">
+        </div>
+    </section>
+
+    <!-- Produits -->
+    <section class="js-page js-produits">
+
+    </section>
+
+    <!-- Download -->
+    <section class="js-page js-download">
+        <div class="fr-upload-group">
+            <label class="fr-label" for="file-upload-ticket">Ajouter un fichier
+                <span class="fr-hint-text">Taille maximale : 20 Mo. Formats supportés : jpg, png, pdf. Un seul fichier uniquement.</span>
+            </label>
+            <input class="fr-upload" type="file" id="file-upload-ticket" name="file-upload">
+        </div>
+    </section>
+
+    <!-- PHOTOS -->
+    <section class="js-page js-photos">
+        <video id="video-camera" autoplay playsinline></video>
+        <img id="video-screen" />
+        <button class="fr-btn" id="captureButton">Prendre la photo</button>
+    </section>
+
+    <!-- TICKET -->
+    <section class="js-page js-ticket">
+        <h2>Données du ticket</h2>
+        <textarea id="ticketData" rows="10" cols="50"></textarea>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <ul>
+            <li>
+                <button class="footer_alertes js-page-onclick" data-section="alertes">
+                    <i class="icon-alert"></i>
+                </button>
+            </li>
+            <li>
+                <button class="footer_produits js-page-onclick" data-section="produits">
+                    <i class="icon-produits"></i>
+                </button>
+            </li>
+            <li>
+                <button class="footer_download js-page-onclick" data-section="download">
+                    <i class="icon-download"></i>
+                </button>
+            </li>
+            <li>
+                <button class="footer_photos js-page-onclick" data-section="photos">
+                    <i class="icon-photos"></i>
+                </button>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- Script en version es6 module et nomodule pour les navigateurs le ne supportant pas -->
+    <script type="text/javascript" src="js/commons/twig.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.1"></script>
+    <script type="text/javascript" src="js/ia/intelligence.js"></script>
+    <script type="module" src="dsfr.module.min.js"></script>
+    <script type="text/javascript" nomodule src="dsfr.nomodule.min.js"></script>
+    <script type="text/javascript" src="js/commons/JSONComparerService.js"></script>
+    <script type="text/javascript" src="js/commons/page.js"></script>
+    <script type="text/javascript" src="js/commons/LocalStorageService.js"></script>
+    <script type="text/javascript" src="js/services/camera.js"></script>
+    <script type="text/javascript" src="js/initialisation/TicketManager.js"></script>
+    <script type="text/javascript" src="js/services/TableauPrincipal.js"></script>
+    <script type="text/javascript" src="js/initialisation/initBDD.js"></script>
+    <script type="text/javascript" src="js/feature/camera.js"></script>
+    <script type="text/javascript" src="js/feature/profil.js"></script>
+    <script type="text/javascript" src="js/feature/alertes.js"></script>
+    <script type="text/javascript" src="js/feature/produits.js"></script>
+    <script type="text/javascript" src="js/feature/main.js"></script>
+
+</body>
+
+</html>

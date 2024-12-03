@@ -1,0 +1,163 @@
+.fr-header__profil {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: -.5rem;
+    margin-top: .25rem;
+    order: 3;
+    padding: .25rem;
+    z-index: calc(var(--ground) + 1000);
+}
+
+.fr-header__logo .fr-logo:before {
+    background-image: url("icons/LOGO.png");
+    background-size: 2.0625rem 1.84375rem,2.0625rem 1.75rem,0;
+    height: 1.75rem;
+}
+.fr-logo::after {
+    background-image: none;
+}
+
+.fr-btn--profil {
+    -webkit-mask-image: url("icons/user/account-circle-fill.svg");
+    mask-image: url("icons/user/account-circle-fill.svg");
+    background: url("icons/user/account-circle-fill.svg") no-repeat;
+    width: 24px;
+    height: 24px;
+}
+
+section.js-page.hidden {
+    display: none;
+}
+
+#video-screen, #video-camera {
+    width: 100%;
+}
+
+#video-camera.hidden, #video-screen.hidden {
+    display: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #ced1f1;
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0px;
+    margin: 0px;
+}
+
+footer ul li {
+    display: inline-block;
+    width: 50px;
+}
+
+footer ul li button {
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+}
+footer ul li i {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position:center center;
+}
+.icon-alert {
+    background-image: url("icons/media/notification-3-line.svg");
+}
+.icon-produits {
+    background-image: url("icons/finance/shopping-cart-2-line.svg");
+}
+.icon-download {
+    background-image: url("icons/document/file-download-line.svg");
+}
+.icon-photos {
+    background-image: url("icons/media/camera-line.svg");
+}
+.active .icon-alert {
+    background-image: url("icons/media/notification-3-fill.svg");
+}
+.active .icon-produits {
+    background-image: url("icons/finance/shopping-cart-2-fill.svg");
+}
+.active .icon-download {
+    background-image: url("icons/document/file-download-fill.svg");
+}
+.active .icon-photos {
+    background-image: url("icons/media/camera-fill.svg");
+}
+
+
+/* CARD */
+.alerts_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0px;
+    margin: 0px;
+}
+
+.fr-card-alert {
+    position: relative;
+    margin: 10px 5px;
+    height: 220px;
+    width: calc(49% - 10px);
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 4px solid var(--blue-france-sun-113-625);
+}
+
+.fr-card-alert_level {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.icon-piment {
+}
+
+.fr-card-alert_label {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.fr-card-alert_image {
+    height: 140px;
+    padding-top: 40px;
+    padding-bottom: 0px;
+    margin-bottom: 0;
+    width: 70%;
+}
+
+.fr-card-alert_image img {
+    max-width: 100%;
+    max-height: 100px;
+}
+
+.fr-card-alert_text h2 {
+    color: var(--blue-france-sun-113-625);
+    margin-bottom: 5px;
+}
+
+.fr-card-alert_text {
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+    line-height: 1em;
+}

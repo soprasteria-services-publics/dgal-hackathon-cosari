@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - image: docker.io/rapsspider/masaf-hackathon:latest
+        imagePullPolicy: Always
+        name: nginx
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+          name: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: nginx
+  name: nginx
+  namespace: masaf
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: http
+  selector:
+    app: nginx
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: masaf
+  namespace: masaf
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: masaf.jason-bourlard.fr
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx
+            port:
+              name: http
+  tls:
+  - hosts:
+    - masaf.jason-bourlard.fr
+    secretName: masaf-jason-bourlard-tls
